@@ -7,63 +7,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+   
     <title>login</title>
 </head>
 <body>
-
-    <div class="container-fluid main-box" style="background: url('https://img.freepik.com/free-vector/man-sitting-desk-unlocking-computer-computer-settings-login-flat-illustration_74855-20645.jpg?w=740&t=st=1671630530~exp=1671631130~hmac=5d00b0d78aea5c01fbaeec23e626d28395870a6ead15a22cb91115ed2f4da408');   background-repeat: no-repeat;">
-
-        <div class="row">
-            <div class="offset-7 col-4  ">
-                <div class="card insidebox">
-                    <div class="container-fluid">
-                        {% for msg in messages %}
-                            {% if msg %}
-                                <div class="alert alert-danger" role="alert">
-                                    {{msg}}
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                        <div class="row mt-5">
-                            <h1><span class='text-danger'>LO</span><span style="color: #131389;">GO</span></h1>
-                            <p class="fs-1" style="color: #1d3590;">Welcome Back</p>
-                            <form method="POST">
-                                {%csrf_token%}
-                                <div class="form-group col-md-12 setInputGroupHeight">
-                                    <label for="inputEmail" class='lableText'> UserName</label>
-                                    {{form.userName}}<br>
-                                </div>
-
-                                <div class="form-group col-md-12 setInputGroupHeight">
-                                    <label for="inputEmail" class='lableText'> Password</label>
-                                    {{form.password}}<br>
-                                </div>
-
-                                <label for="inputEmail" class='lableText'> Security Text</label>
-                                <div class="form-group col-md-12">
-                                    {{form.securityText}}<br>
-                                </div>
-
-                                <div class="form-check lableText mt-3   ">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                      Remember me on this computer
-                                    </label>
-                                  </div>
-
-                                <div class="d-grid gap-2 mt-2">
-                                    <button type="submit" class="btn text-light" style="background: #1e4178; font-size:15px;" type="button">LOG IN</button>
-                                  </div>
-
-                                <div class="text-center my-3" style="font-size: 11px;">
-                                    <a href="" class="text-decoration-none" style="color:#f2451c;">Forgot Password?</a>
-                                </div>
-                             </form>
-                        </div>
+    
+        <div class="container-fluid">
+            <div class="row d-flex flex-row align-items-center" style="height:100vh;">
+                <div class="col-xl-7 d-none d-xl-block">
+                    <div class="main-box" style="background: url('https://img.freepik.com/free-vector/man-sitting-desk-unlocking-computer-computer-settings-login-flat-illustration_74855-20645.jpg?w=740&t=st=1671630530~exp=1671631130~hmac=5d00b0d78aea5c01fbaeec23e626d28395870a6ead15a22cb91115ed2f4da408');   background-repeat: no-repeat; background-size: 85%;">
+                        
                     </div>
-                    
                 </div>
-            </div>
+                
+                <div class="col-xl-4">
+                    <div class="card insidebox">
+                        <div class="container-fluid">
+                            {% for msg in messages %}
+                                {% if msg %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{msg}}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            <div class="row mt-5">
+                                <h1><span class='text-danger'>LO</span><span style="color: #131389;">GO</span></h1>
+                                <p class="fs-1" style="color: #1d3590;">Welcome Back</p>
+                                <form method="POST">
+                                    {%csrf_token%}
+                                    <div class="form-group col-md-12 setInputGroupHeight">
+                                        <label for="inputEmail" class='lableText'> UserName</label>
+                                        {{form.userName}}<br>
+                                    </div>
+
+                                    <div class="form-group col-md-12 setInputGroupHeight">
+                                        <label for="inputEmail" class='lableText'> Password</label>
+                                        {{form.password}}<br>
+                                    </div>
+
+                                    <label for="inputEmail" class='lableText'> Security Text</label>
+                                    <div class="form-group col-md-12">
+                                        {{form.securityText}}<br>
+                                    </div>
+
+                                    <div class="form-check lableText mt-3   ">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                        Remember me on this computer
+                                        </label>
+                                    </div>
+
+                                    <div class="d-grid gap-2 mt-2">
+                                        <button type="submit" class="btn text-light" style="background: #1e4178; font-size:15px;" type="button">LOG IN</button>
+                                    </div>
+
+                                    <div class="text-center my-3" style="font-size: 11px;">
+                                        <a href="" class="text-decoration-none" style="color:#f2451c;">Forgot Password?</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
         </div>
 
         
